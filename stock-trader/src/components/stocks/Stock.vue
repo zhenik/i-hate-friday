@@ -48,9 +48,8 @@
           quantity: this.quantity
         };
         console.log(order);
-        console.log("Bro I am here");
         this.quantity = 0;
       }
-    },
+    }
   }
 </script>
