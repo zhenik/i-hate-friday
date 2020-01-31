@@ -1,5 +1,6 @@
 .DS_Store
 stock-trader/node_modules
+/node-modules
 /dist
 
 # local env files
