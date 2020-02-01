@@ -1,19 +1,18 @@
-import stocks from "../../data/stocks";
+import stocks from "../../data/stocks.js";
 
 const state = {
   stocks: []
 };
 
-const mutation = {
-  'SET_STOCKS': (state, stocks) => {
-    state.stocks = stocks;
+const actions = {
+  initStocks ({commit}) {
+    commit('setStocks', stocks);
   },
-
 };
 
-const actions = {
-  initStocks: ({commit}) => {
-    commit('SET_STOCKS', stocks);
+const mutations = {
+  setStocks (state, stocks) {
+    state.stocks = stocks;
   },
 };
 
@@ -26,7 +25,7 @@ const getters = {
 export default {
   namespaced: true,
   state,
-  mutation,
+  mutations,
   actions,
   getters
 };
