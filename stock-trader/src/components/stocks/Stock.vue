@@ -13,7 +13,7 @@
               type="number"
               class="form-control"
               placeholder="Quantity"
-              v-model="quantity"
+              v-model.number="quantity"
               :class="{danger: insufficientFunds}"
           >
         </div>
@@ -21,7 +21,7 @@
           <button
               class="btn btn-success"
               @click="buyStock"
-              :disabled="quantity <=0 || !Number.isInteger(quantity)"
+              :disabled="quantity <= 0 || !Number.isInteger(quantity)"
           >
             Buy
           </button>
@@ -43,11 +43,11 @@
     methods: {
       buyStock() {
         const order = {
-          stockId: this.stock,
+          stockId: this.stock.id,
           stockPrice: this.stock.price,
           quantity: this.quantity
         };
-        console.log(order);
+        this.$store.dispatch('portfolio/buyStock', order);
         this.quantity = 0;
       }
     }
