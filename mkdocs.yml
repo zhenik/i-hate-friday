@@ -1,8 +1,6 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: My Docs
 theme:
-#  name: material
-  repo_url: https://github.com/zhenik/i-hate-friday
   name: null
   custom_dir: mkdocs-material/material
 
